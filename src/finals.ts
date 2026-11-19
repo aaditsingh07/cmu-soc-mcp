@@ -160,7 +160,8 @@ const FINALS_TTL = 6 * HOUR;
 async function loadFinalsDocuments(): Promise<(FinalsDocument & { source_url: string })[]> {
   return Promise.all(
     FINALS_PDF_URLS.map(async (url) => {
-      const pdf = await getDocumentProxy(await fetchBytes(url, FINALS_TTL));
+      // pdf.js detaches the buffer it is given, so hand it a copy of the cached bytes.
+      const pdf = await getDocumentProxy((await fetchBytes(url, FINALS_TTL)).slice());
       // Per page: unpdf's mergePages:true flattens every line break, and rows are lines.
       const { text } = await extractText(pdf, { mergePages: false });
       return { ...parseFinalsText((text as string[]).join("\n")), source_url: url };

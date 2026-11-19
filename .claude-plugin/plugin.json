@@ -1,0 +1,13 @@
+{
+  "name": "cmu-soc",
+  "displayName": "CMU Schedule Planner",
+  "version": "1.0.0",
+  "description": "Carnegie Mellon Schedule of Classes tools plus a guided schedule-planning skill: semesters, departments, sections and minis, prerequisites, registrar final exams, catalog descriptions, and campus walking-time estimates.",
+  "author": {
+    "name": "Aadit Singh",
+    "url": "https://github.com/aaditsingh07"
+  },
+  "repository": "https://github.com/aaditsingh07/cmu-soc-mcp",
+  "license": "Unlicense",
+  "keywords": ["cmu", "carnegie-mellon", "schedule-of-classes", "course-planning", "registration"]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "cmu-soc-mcp",
+  "owner": {
+    "name": "Aadit Singh",
+    "url": "https://github.com/aaditsingh07"
+  },
+  "description": "CMU Schedule of Classes MCP server and schedule-planning skill",
+  "plugins": [
+    {
+      "name": "cmu-soc",
+      "source": "./",
+      "description": "Carnegie Mellon Schedule of Classes tools plus a guided schedule-planning skill: semesters, departments, sections and minis, prerequisites, registrar final exams, catalog descriptions, and campus walking-time estimates."
+    }
+  ]
+}
