@@ -1,0 +1,42 @@
+{
+  "manifest_version": "0.3",
+  "name": "cmu-soc",
+  "display_name": "CMU Schedule of Classes (unofficial)",
+  "version": "1.0.0",
+  "description": "Query Carnegie Mellon's public Schedule of Classes: semesters, departments, sections and minis, prerequisites, registrar final exams, catalog descriptions, and campus walking times.",
+  "long_description": "Unofficial. Reads CMU's public Schedule of Classes (refreshed nightly), the University Registrar's final-exam schedule and the current undergraduate catalog, on demand, for personal planning. CMU does not publish seats, waitlists, rooms or instructors publicly; those are in SIO. Final exams are only published for the current semester, around week 6. Building coordinates © OpenStreetMap contributors (ODbL).",
+  "author": {
+    "name": "Aadit Singh",
+    "url": "https://github.com/aaditsingh07"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aaditsingh07/cmu-soc-mcp"
+  },
+  "homepage": "https://github.com/aaditsingh07/cmu-soc-mcp",
+  "license": "Unlicense",
+  "keywords": ["cmu", "carnegie-mellon", "schedule-of-classes", "course-planning"],
+  "server": {
+    "type": "node",
+    "entry_point": "server/bundle.cjs",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/bundle.cjs"]
+    }
+  },
+  "tools": [
+    { "name": "list_semesters", "description": "Semesters published in the CMU Schedule of Classes" },
+    { "name": "list_departments", "description": "Department codes and their course-number prefixes" },
+    { "name": "search_courses", "description": "Every course a department offers in a semester" },
+    { "name": "get_course_details", "description": "Sections, recitations, minis, meeting days/times and delivery mode for one course" },
+    { "name": "get_course_info", "description": "Prerequisites, corequisites, notes and reservations from the course page" },
+    { "name": "get_final_exams", "description": "Registrar final-exam times for several courses (current semester only)" },
+    { "name": "get_course_description", "description": "Current undergraduate catalog entry, with minimum grades" },
+    { "name": "estimate_walk_time", "description": "Walking-time estimate between two campus buildings" },
+    { "name": "list_buildings", "description": "Campus buildings known to estimate_walk_time" }
+  ],
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": { "node": ">=18.0.0" }
+  }
+}

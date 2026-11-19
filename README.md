@@ -69,10 +69,26 @@ No build step is needed: the plugin ships a self-contained server bundle (`dist/
 that runs on Node 18 or newer. Start planning with `/cmu-soc:schedule-planning`, or just ask
 about CMU classes and Claude will pick the skill up on its own.
 
-### Claude Desktop
+### Claude Desktop (one-click extension — recommended for Desktop)
 
-Add this to `claude_desktop_config.json` (Settings → Developer → Edit Config), using the
-absolute path to `dist/bundle.cjs` in your clone:
+1. Download **`cmu-soc.mcpb`** from the
+   [latest release](https://github.com/aaditsingh07/cmu-soc-mcp/releases/latest).
+2. Double-click it, or drag it into Claude Desktop's **Settings → Extensions**, and click
+   **Install**. Claude Desktop runs it with its own built-in Node.js, so there's nothing else
+   to install.
+3. *(Optional, for the guided planner.)* Download **`cmu-schedule-planning.zip`** from the
+   same release and upload it in Claude Desktop's Skills settings (**Settings → Capabilities
+   → Skills**).
+4. Ask something like "Plan my Spring 2027 schedule at CMU".
+
+To rebuild both files from source, run `npm install && npm run pack:desktop`. They are
+written to `dist/`.
+
+### Claude Desktop (manual config)
+
+If you'd rather not use the extension, add this to `claude_desktop_config.json`
+(Settings → Developer → Edit Config), using the absolute path to `dist/bundle.cjs` in your
+clone:
 
 ```json
 {
