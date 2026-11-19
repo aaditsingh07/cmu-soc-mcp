@@ -1,0 +1,35 @@
+{
+  "name": "cmu-soc-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for the Carnegie Mellon Schedule of Classes (enr-apps.as.cmu.edu/open/SOC)",
+  "type": "module",
+  "license": "Unlicense",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaditsingh07/cmu-soc-mcp.git"
+  },
+  "bin": {
+    "cmu-soc-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc && npm run bundle",
+    "bundle": "esbuild src/index.ts --bundle --platform=node --format=cjs --outfile=dist/bundle.cjs",
+    "start": "node dist/index.js",
+    "test:unit": "tsc && node --test test/",
+    "test": "npm run build && node --test test/ && node scripts/smoke-test.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.0",
+    "cheerio": "1.0.0-rc.12",
+    "unpdf": "0.12.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.5.0"
+  }
+}
