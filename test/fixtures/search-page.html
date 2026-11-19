@@ -1,0 +1,16 @@
+<!-- Hand-written fixture mimicking the CMU SOC search page structure (not a copy of it). -->
+<html><body>
+<form id="search-form" action="/SOC/SOCServlet/search" method="post">
+<select id="semester" name="SEMESTER" class="form-control">
+  <option  value="S27">Spring 2027</option>
+  <option  value="F26">Fall 2026</option>
+  <option  value="M26">Summer 2026</option>
+</select>
+<select multiple id="dept" name="DEPT" class="form-control">
+  <option selected value="All">All Departments</option>
+  <option  value="CS">  Computer Science   (15XXX)  </option>
+  <option  value="MSC">  Mathematical Sciences   (21XXX)  </option>
+  <option  value="ECE">  Electrical &amp; Computer Engineering   (18XXX)  </option>
+</select>
+</form>
+</body></html>
